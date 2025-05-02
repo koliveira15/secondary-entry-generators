@@ -6,8 +6,7 @@
     "tslib": "^2.3.0"
   },
   "type": "commonjs",
-  "main": "./src/index.js",
-  "typings": "./src/index.d.ts",
+  "types": "./src/**/*.d.ts",
   "exports": {
     "./adapters": "./src/adapters/index.js"
   },

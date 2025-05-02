@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@myorg/nx-plugin": ["libs/nx-plugin/src/index.ts"]
+      "@myorg/nx-plugin/adapters": ["libs/nx-plugin/src/adapters/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
