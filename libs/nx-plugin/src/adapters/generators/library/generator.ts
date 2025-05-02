@@ -1,17 +1,18 @@
-import {formatFiles, Tree,} from '@nx/devkit';
+import {formatFiles, names, Tree,} from '@nx/devkit';
 import {libraryGenerator as jsLibraryGenerator} from "@nx/js";
 import {LibraryGeneratorSchema} from './schema';
 
 export async function libraryGenerator(
   tree: Tree,
-  _options: LibraryGeneratorSchema
+  options: LibraryGeneratorSchema
 ) {
+  const normalizedName = names(options.name).fileName;
   await jsLibraryGenerator(tree, {
-    name: 'my-lib',
-    directory: 'libs/my-lib',
+    name: normalizedName,
+    directory: `libs/${normalizedName}`,
     bundler: 'tsc',
     unitTestRunner: 'none',
-    projectNameAndRootFormat: 'as-provided'
+    projectNameAndRootFormat: 'as-provided',
   });
   await formatFiles(tree);
 }

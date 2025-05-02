@@ -3,6 +3,11 @@
   "$id": "Library",
   "title": "",
   "type": "object",
-  "properties": {},
-  "required": []
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the library"
+    }
+  },
+  "required": ["name"]
 }
